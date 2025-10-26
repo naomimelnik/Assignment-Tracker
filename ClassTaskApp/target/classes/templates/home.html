@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+</head>
+<body>
+    <div>
+        <h1>Class Task Tracker</h1>
+        <hr />
+        <table>
+            <thead>
+            <th>Actions</th>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Created</th>
+            <th>Updated</th>
+            </thead>
+        </table>
+        <tbody>
+        <tr th:each="item : ${tasks}">
+            <td>&nbsp;</td>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.description}"></td>
+            <td>
+                <span th:if="${item.completed == true}" th:text="Yes"/>
+                <span th:unless="${item.completed == true}" th:text="No"/>
+            </td>
+            <td th:text="${item.creationDate}"></td>
+            <td th:text="${item.updateDate}"></td>
+        </tr>
+        </tbody>
+    </div>
+</body>>
+</html>
