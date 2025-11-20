@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 @Service
-public class taskService {
+public class TaskService {
     @Autowired
     private taskRepository taskRepository;
 
